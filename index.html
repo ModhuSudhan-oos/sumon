@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braynio - AI Tool Directory</title>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <!-- Lottie Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo">🧠</div>
+                <span>Braynio</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#tool-grid">Tools</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#subscribe">Subscribe</a></li>
+                </ul>
+            </nav>
+            <div class="cta-buttons">
+                <button class="subscribe-btn" id="subscribeBtn">Subscribe</button>
+            </div>
+            <div class="theme-toggle" id="themeToggle">
+                <span class="toggle-icon"></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text fade-in">
+                <h1>Discover <span id="typed-text"></span></h1>
+                <p>Unlock the power of AI with our curated collection of cutting-edge tools</p>
+                <button class="hero-cta" id="heroSubscribe">Get Early Access <i class="fas fa-arrow-right"></i></button>
+            </div>
+            <div id="lottie-animation" class="lottie-animation fade-in delay-1"></div>
+        </div>
+        <div class="particles" id="particles"></div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-card fade-in">
+                <div class="stat-value">100+</div>
+                <div class="stat-label">AI Tools</div>
+            </div>
+            <div class="stat-card fade-in delay-1">
+                <div class="stat-value">24/7</div>
+                <div class="stat-label">Updated</div>
+            </div>
+            <div class="stat-card fade-in delay-2">
+                <div class="stat-value">500K+</div>
+                <div class="stat-label">Users</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="search-section">
+        <div class="search-container fade-in">
+            <div class="search-input">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search AI tools...">
+            </div>
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+            </select>
+        </div>
+    </section>
+
+    <section id="categories" class="category-section">
+        <h2 class="section-title fade-in">Explore Categories</h2>
+        <div class="categories-grid" id="categoriesGrid">
+            <!-- Categories will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <section id="tool-grid" class="tool-grid-section">
+        <h2 class="section-title fade-in">Featured AI Tools</h2>
+        <main class="tool-grid" id="toolGrid">
+            <!-- Tools will be dynamically inserted here -->
+        </main>
+    </section>
+
+    <section id="subscribe" class="subscribe-section">
+        <div class="subscribe-container fade-in">
+            <h2>Stay Updated with AI Trends</h2>
+            <p>Subscribe to get exclusive tool recommendations and industry insights</p>
+            <div class="subscribe-form">
+                <input type="email" id="subscribeEmail" placeholder="Your professional email">
+                <button class="subscribe-btn" id="footerSubscribe">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <div class="logo">🧠</div>
+                    <span>Braynio</span>
+                </div>
+                <p>© 2023 Braynio. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
